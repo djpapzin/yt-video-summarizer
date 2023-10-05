@@ -1,0 +1,6 @@
+dotenv
+streamlit
+yt-dlp
+whisper
+langchain
+textwrap3
