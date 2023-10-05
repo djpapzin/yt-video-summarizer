@@ -1,57 +1,53 @@
 # YouTube Video Summarizer
 
-This project uses modern AI techniques to automatically generate text summaries of YouTube videos.
-
-## Overview
-
-The program takes a YouTube video URL as input, downloads the video in the desired quality, transcribes the audio using Whisper, summarizes the transcription using LangChain, and outputs a text summary.
+Automated pipeline to summarize YouTube videos using Whisper for transcription and LangChain for extractive summarization. This application enables robust audio-to-text transcription of videos with Whisper and produces concise summaries using the GPT-3.5-turbo model via LangChain.
 
 ## Features
 
-- Lets user specify video resolution for download 
-- Downloads YouTube videos using yt-dlp
-- Transcribes audio using Whisper STT model
-- Summarizes long text using GPT-3.5 via LangChain
-- Wraps summary text to 100 characters per line  
-- Provides downloadable transcripts and summaries
+- **YouTube Video Input**: Accepts a YouTube video URL.
+- **Video Download**: Downloads the video in the user-specified quality.
+- **Transcription**: Uses the Whisper model to transcribe the video's audio.
+- **Summarization**: Uses the GPT-3.5-turbo model via LangChain to generate a concise summary of the transcription.
+- **Downloadable Outputs**: Provides options to download both the full transcription and the generated summary.
 
 ## Usage
 
-1. Install dependencies
+1. **Setup**:
+   - Clone the repository:
+     ```bash
+     git clone https://github.com/djpapzin/yt-video-summarizer.git
+     ```
+   - Navigate to the project directory:
+     ```bash
+     cd yt-video-summarizer
+     ```
+   - Install the required dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-    ```
-    pip install -r requirements.txt
-    ```
+2. **Environment Variables**:
+   - Ensure you have set the necessary API keys in the `.env` file.
 
-2. Set API keys as environment variables in `.env` file
+3. **Run the Application**:
+   - Start the Streamlit app:
+     ```bash
+     streamlit run app.py
+     ```
 
-3. Run `main.py`
+4. **User Interface**:
+   - Enter a YouTube video URL.
+   - Select the desired video quality.
+   - Click on the "Start" button to initiate the summarization process.
+   - Once processed, view and download the generated transcript and summary.
 
-    ```
-    python main.py
-    ```
+## Dependencies
 
-4. Enter a YouTube video URL when prompted
-
-5. Select desired video quality 
-
-6. View and download the generated transcript and summary
-
-## Implementation Details
-
-- `download_mp4_from_youtube()` - Downloads video in MP4 format
-- `whisper.transcribe()` - Converts video to text 
-- `LangChain` - Uses GPT-3.5 model to summarize text
-- `textwrap.fill()` - Wraps summary text nicely
-
-## Requirements
-
-See `requirements.txt`. Main libraries used:
-
-- yt-dlp
-- Whisper
-- LangChain
-- textwrap3
+- `streamlit`: For the web application interface.
+- `yt-dlp`: To download YouTube videos.
+- `whisper`: For audio transcription.
+- `dotenv`: To load environment variables.
+- `LangChain`: To communicate with the GPT-3.5-turbo model for summarization.
 
 ## Contributing
 
@@ -59,4 +55,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+MIT
