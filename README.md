@@ -2,6 +2,12 @@
 
 Automated pipeline to summarize YouTube videos using Whisper for transcription and LangChain for extractive summarization. This application enables robust audio-to-text transcription of videos with Whisper and produces concise summaries using the GPT-3.5-turbo model via LangChain.
 
+![App Screenshot](screenshot.jpeg)
+
+## Demo
+
+Check out the live demo of the application [here](https://yt-video-summarize.streamlit.app/).
+
 ## Features
 
 - **YouTube Video Input**: Accepts a YouTube video URL.
