@@ -75,7 +75,7 @@ if st.session_state.get('start_button_pressed', False):
             transcription = result['text']
 
             # Save the transcription to a file
-            with open(f'{video_title}_transcription.txt', 'w') as file:
+            with open(f'{video_title}_transcription.txt', 'w', encoding='utf-8') as file:
                 file.write(transcription)
 
             # Initialize the LangChain model for summarization
