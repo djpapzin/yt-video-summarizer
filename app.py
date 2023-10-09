@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 import streamlit as st
 import yt_dlp
-import whisper
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
